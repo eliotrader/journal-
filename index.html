@@ -6,10 +6,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>333 MACRO PRO</title>
+<title>333 MACRO TERMINAL</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -17,136 +16,85 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    background:#050816;
-    font-family:'Inter',sans-serif;
-    color:white;
-    overflow-x:hidden;
-}
-
-::-webkit-scrollbar{
-    width:8px;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#ff0080;
-    border-radius:20px;
+background:#050505;
+color:white;
+font-family:'Inter',sans-serif;
+overflow-x:hidden;
 }
 
 .sidebar{
-    width:260px;
-    background:#060b1b;
-    border-right:1px solid rgba(255,255,255,0.06);
-    position:fixed;
-    left:0;
-    top:0;
-    height:100vh;
-    padding:25px;
-    overflow-y:auto;
+width:260px;
+height:100vh;
+position:fixed;
+left:0;
+top:0;
+background:#060b1b;
+border-right:1px solid rgba(255,255,255,0.05);
+padding:24px;
 }
 
 .main{
-    margin-left:260px;
-    padding:25px;
+margin-left:260px;
+padding:24px;
 }
 
-.card{
-    background:linear-gradient(
-        180deg,
-        rgba(15,23,42,0.95),
-        rgba(10,15,30,0.95)
-    );
-
-    border:1px solid rgba(255,255,255,0.06);
-
-    border-radius:24px;
-
-    backdrop-filter:blur(14px);
-
-    box-shadow:
-    0 0 0 1px rgba(255,255,255,0.02),
-    0 10px 40px rgba(0,0,0,0.4);
-
-    transition:0.3s;
+.glass{
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.06);
+backdrop-filter:blur(12px);
 }
 
-.card:hover{
-    transform:translateY(-4px);
+.panel{
+border-radius:24px;
+padding:22px;
+box-shadow:
+0 0 0 1px rgba(255,255,255,0.02),
+0 10px 40px rgba(0,0,0,0.4);
 }
 
-.active{
-    background:linear-gradient(
-        90deg,
-        #ff0080,
-        #7928ca
-    );
-}
-
-.pink{
-    color:#ff0080;
+.gold{
+color:#d4af37;
 }
 
 .green{
-    color:#00ff88;
+color:#00ff88;
 }
 
 .red{
-    color:#ff4d6d;
+color:#ff4d6d;
 }
 
 .blue{
-    color:#00b4ff;
+color:#00b4ff;
 }
 
-.glow{
-    box-shadow:
-    0 0 40px rgba(255,0,128,0.15);
+.active{
+background:linear-gradient(
+90deg,
+#d4af37,
+#8b6b17
+);
 }
 
-.top-stat{
-    position:relative;
-    overflow:hidden;
+.metric{
+font-size:42px;
+font-weight:800;
 }
 
-.top-stat::before{
-    content:'';
-    position:absolute;
-    width:200px;
-    height:200px;
-    background:radial-gradient(
-        rgba(255,0,128,0.2),
-        transparent
-    );
-    top:-100px;
-    right:-100px;
+.small{
+font-size:12px;
+color:#777;
 }
 
-.news-item{
-    border-bottom:1px solid rgba(255,255,255,0.05);
-    padding-bottom:16px;
-}
-
-.world-map{
-    width:100%;
-    opacity:0.9;
-    filter:drop-shadow(0 0 20px rgba(255,0,128,0.2));
-}
-
-@media(max-width:1200px){
-
-    .sidebar{
-        display:none;
-    }
-
-    .main{
-        margin-left:0;
-    }
-
+.row{
+border-bottom:1px solid rgba(255,255,255,0.04);
+padding-bottom:14px;
 }
 
 </style>
@@ -159,104 +107,57 @@ body{
 
 <div class="sidebar">
 
-    <div class="mb-10">
+<div class="mb-10">
 
-        <div class="flex items-center gap-3">
+<h1 class="text-5xl font-black gold">
+333
+</h1>
 
-            <div class="text-5xl">
-                🐖
-            </div>
+<h2 class="text-3xl font-bold">
+MACRO
+</h2>
 
-            <div>
+<p class="text-gray-500 mt-4 text-sm leading-6">
+Institutional Macro Intelligence
+</p>
 
-                <h1 class="text-6xl font-black pink">
-                    333
-                </h1>
+</div>
 
-                <h2 class="text-4xl font-bold -mt-3">
-                    MACRO
-                </h2>
+<div class="space-y-2">
 
-            </div>
+<div class="active p-4 rounded-xl font-semibold">
+Dashboard
+</div>
 
-        </div>
+<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
+Narrative Engine
+</div>
 
-        <p class="text-gray-400 mt-5 leading-7 text-sm">
-            Inteligencia Global del Mercado Porcino
-        </p>
+<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
+Institutional Sentiment
+</div>
 
-    </div>
+<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
+Macro Heatmap
+</div>
 
-    <div class="space-y-2">
+<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
+Market Panel
+</div>
 
-        <div class="active p-4 rounded-xl font-semibold">
-            Dashboard
-        </div>
+<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
+Economic Calendar
+</div>
 
-        <div class="p-4 rounded-xl hover:bg-white/5 cursor-pointer">
-            Precios del Cerdo
-        </div>
+<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
+Research Feed
+</div>
 
-        <div class="p-4 rounded-xl hover:bg-white/5 cursor-pointer">
-            Materias Primas
-        </div>
+<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
+Smart Money
+</div>
 
-        <div class="p-4 rounded-xl hover:bg-white/5 cursor-pointer">
-            Impacto Económico
-        </div>
-
-        <div class="p-4 rounded-xl hover:bg-white/5 cursor-pointer">
-            Países y Consumo
-        </div>
-
-        <div class="p-4 rounded-xl hover:bg-white/5 cursor-pointer">
-            Producción Global
-        </div>
-
-        <div class="p-4 rounded-xl hover:bg-white/5 cursor-pointer">
-            Mapa Mundial
-        </div>
-
-        <div class="p-4 rounded-xl hover:bg-white/5 cursor-pointer">
-            Costos Feed
-        </div>
-
-        <div class="p-4 rounded-xl hover:bg-white/5 cursor-pointer">
-            IA Predictiva
-        </div>
-
-        <div class="p-4 rounded-xl hover:bg-white/5 cursor-pointer">
-            Noticias
-        </div>
-
-        <div class="p-4 rounded-xl hover:bg-white/5 cursor-pointer">
-            Estudios Científicos
-        </div>
-
-    </div>
-
-    <!-- PRO -->
-
-    <div class="card mt-10 p-5 glow">
-
-        <h2 class="text-2xl font-bold pink">
-            333 MACRO PRO
-        </h2>
-
-        <div class="space-y-3 mt-5 text-sm">
-
-            <p>✅ Datos en tiempo real</p>
-            <p>✅ IA predictiva avanzada</p>
-            <p>✅ Reportes inteligentes</p>
-            <p>✅ Heatmaps globales</p>
-
-        </div>
-
-        <button class="mt-6 w-full bg-pink-600 hover:bg-pink-700 transition p-3 rounded-xl font-bold">
-            ACTIVAR PRO
-        </button>
-
-    </div>
+</div>
 
 </div>
 
@@ -264,438 +165,437 @@ body{
 
 <div class="main">
 
-    <!-- TOP -->
+<!-- TOP -->
 
-    <div class="flex justify-between items-center mb-8">
+<div class="flex justify-between items-center mb-8">
 
-        <div>
+<div>
 
-            <h1 class="text-3xl font-bold">
-                Mercado Global en Tiempo Real
-            </h1>
+<h1 class="text-4xl font-bold gold">
+333 MACRO TERMINAL
+</h1>
 
-            <p class="text-gray-400 mt-2">
-                Dashboard macroeconómico del mercado porcino mundial
-            </p>
+<p class="text-gray-500 mt-2">
+Institutional Narrative Dashboard
+</p>
 
-        </div>
+</div>
 
-        <div class="flex items-center gap-4">
+<div class="glass panel">
 
-            <div class="card px-5 py-3">
-                USD
-            </div>
+<p class="small">
+Institutional Sentiment
+</p>
 
-            <div class="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center font-bold">
-                LC
-            </div>
+<h2 class="text-3xl font-bold green">
+BULLISH
+</h2>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
-    <!-- STATS -->
+<!-- TOP METRICS -->
 
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5">
 
-        <div class="card top-stat p-6 glow">
+<div class="glass panel">
 
-            <p class="text-gray-400 text-sm">
-                CERDO PROMEDIO GLOBAL
-            </p>
+<p class="small">
+XAUUSD
+</p>
 
-            <h2 class="text-5xl font-black mt-3">
-                2.23
-            </h2>
+<h2 class="metric gold">
+2368
+</h2>
 
-            <p class="green mt-4 font-semibold">
-                +1.83%
-            </p>
+<p class="green mt-3">
++1.82%
+</p>
 
-        </div>
+</div>
 
-        <div class="card top-stat p-6">
+<div class="glass panel">
 
-            <p class="text-gray-400 text-sm">
-                MAÍZ CME
-            </p>
+<p class="small">
+DXY
+</p>
 
-            <h2 class="text-5xl font-black mt-3">
-                445
-            </h2>
+<h2 class="metric">
+104.3
+</h2>
 
-            <p class="green mt-4 font-semibold">
-                +1.54%
-            </p>
+<p class="red mt-3">
+-0.42%
+</p>
 
-        </div>
+</div>
 
-        <div class="card top-stat p-6">
+<div class="glass panel">
 
-            <p class="text-gray-400 text-sm">
-                SOJA CME
-            </p>
+<p class="small">
+US10Y
+</p>
 
-            <h2 class="text-5xl font-black mt-3">
-                1186
-            </h2>
+<h2 class="metric">
+4.28
+</h2>
 
-            <p class="red mt-4 font-semibold">
-                -0.69%
-            </p>
+<p class="red mt-3">
++0.63%
+</p>
 
-        </div>
+</div>
 
-        <div class="card top-stat p-6">
+<div class="glass panel">
 
-            <p class="text-gray-400 text-sm">
-                PETRÓLEO WTI
-            </p>
+<p class="small">
+SP500
+</p>
 
-            <h2 class="text-5xl font-black mt-3">
-                78.4
-            </h2>
+<h2 class="metric">
+5310
+</h2>
 
-            <p class="green mt-4 font-semibold">
-                +1.57%
-            </p>
+<p class="green mt-3">
++0.84%
+</p>
 
-        </div>
+</div>
 
-        <div class="card top-stat p-6">
+<div class="glass panel">
 
-            <p class="text-gray-400 text-sm">
-                DÓLAR INDEX
-            </p>
+<p class="small">
+VIX
+</p>
 
-            <h2 class="text-5xl font-black mt-3">
-                104.3
-            </h2>
+<h2 class="metric">
+13.4
+</h2>
 
-            <p class="red mt-4 font-semibold">
-                -0.27%
-            </p>
+<p class="green mt-3">
+-2.10%
+</p>
 
-        </div>
+</div>
+
+</div>
+
+<!-- SECOND -->
+
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-5 mt-5">
 
-    </div>
+<!-- NARRATIVE -->
 
-    <!-- SECOND -->
+<div class="glass panel xl:col-span-2">
 
-    <div class="grid grid-cols-1 xl:grid-cols-3 gap-5 mt-5">
+<h2 class="text-2xl font-bold gold mb-5">
+Gold Narrative Engine
+</h2>
 
-        <!-- TABLE -->
+<p class="text-gray-300 leading-8 text-lg">
 
-        <div class="card p-6">
+Gold strengthens as markets increase expectations of
+future Federal Reserve rate cuts while softer inflation
+data weakens the dollar. Institutional flows continue
+favoring safe haven assets amid geopolitical uncertainty.
 
-            <h2 class="text-2xl font-bold mb-6">
-                Precio del Cerdo en el Mundo
-            </h2>
+</p>
 
-            <div class="space-y-5">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-8">
 
-                <div class="flex justify-between border-b border-white/5 pb-3">
-                    <span>🇨🇳 China</span>
-                    <span class="green font-semibold">2.85</span>
-                </div>
+<div class="glass panel">
+<p class="small">USD</p>
+<h2 class="red text-2xl font-bold mt-2">
+Bearish
+</h2>
+</div>
 
-                <div class="flex justify-between border-b border-white/5 pb-3">
-                    <span>🇺🇸 EE.UU.</span>
-                    <span class="green font-semibold">2.29</span>
-                </div>
+<div class="glass panel">
+<p class="small">Inflation</p>
+<h2 class="green text-2xl font-bold mt-2">
+Bullish
+</h2>
+</div>
 
-                <div class="flex justify-between border-b border-white/5 pb-3">
-                    <span>🇪🇸 España</span>
-                    <span class="green font-semibold">2.31</span>
-                </div>
+<div class="glass panel">
+<p class="small">Liquidity</p>
+<h2 class="green text-2xl font-bold mt-2">
+High
+</h2>
+</div>
 
-                <div class="flex justify-between border-b border-white/5 pb-3">
-                    <span>🇩🇪 Alemania</span>
-                    <span class="green font-semibold">2.25</span>
-                </div>
+<div class="glass panel">
+<p class="small">Risk</p>
+<h2 class="gold text-2xl font-bold mt-2">
+Neutral
+</h2>
+</div>
 
-                <div class="flex justify-between border-b border-white/5 pb-3">
-                    <span>🇧🇷 Brasil</span>
-                    <span class="green font-semibold">2.08</span>
-                </div>
+</div>
 
-                <div class="flex justify-between border-b border-white/5 pb-3">
-                    <span>🇲🇽 México</span>
-                    <span class="red font-semibold">2.17</span>
-                </div>
+</div>
 
-                <div class="flex justify-between">
-                    <span>🇨🇱 Chile</span>
-                    <span class="red font-semibold">2.34</span>
-                </div>
+<!-- HEATMAP -->
 
-            </div>
+<div class="glass panel">
 
-        </div>
+<h2 class="text-2xl font-bold gold mb-5">
+Macro Heatmap
+</h2>
 
-        <!-- CHART -->
+<div class="space-y-5">
 
-        <div class="card p-6 xl:col-span-2">
+<div class="flex justify-between row">
+<span>DXY</span>
+<span class="red">
+Bearish
+</span>
+</div>
 
-            <div class="flex justify-between items-center mb-6">
+<div class="flex justify-between row">
+<span>US10Y</span>
+<span class="gold">
+Neutral
+</span>
+</div>
 
-                <h2 class="text-2xl font-bold">
-                    Tendencia Global del Precio del Cerdo
-                </h2>
+<div class="flex justify-between row">
+<span>Inflation</span>
+<span class="green">
+Bullish
+</span>
+</div>
 
-                <div>
+<div class="flex justify-between row">
+<span>Liquidity</span>
+<span class="green">
+Bullish
+</span>
+</div>
 
-                    <div class="text-4xl font-black green">
-                        2.23
-                    </div>
+<div class="flex justify-between">
+<span>Risk Appetite</span>
+<span class="red">
+Bearish
+</span>
+</div>
 
-                    <div class="green text-sm">
-                        +3.21%
-                    </div>
+</div>
 
-                </div>
+</div>
 
-            </div>
+</div>
 
-            <canvas id="lineChart" height="100"></canvas>
+<!-- THIRD -->
 
-        </div>
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-5 mt-5">
 
-    </div>
+<!-- CHART -->
 
-    <!-- THIRD -->
+<div class="glass panel">
 
-    <div class="grid grid-cols-1 xl:grid-cols-3 gap-5 mt-5">
+<div class="flex justify-between items-center mb-6">
 
-        <!-- FEED -->
+<h2 class="text-2xl font-bold gold">
+XAUUSD Trend
+</h2>
 
-        <div class="card p-6">
+<div class="green text-3xl font-bold">
+2368
+</div>
 
-            <h2 class="text-2xl font-bold mb-5">
-                Materias Primas
-            </h2>
+</div>
 
-            <div class="space-y-4">
+<canvas id="goldChart"></canvas>
 
-                <div class="flex justify-between">
-                    <span>🌽 Maíz</span>
-                    <span class="green">+1.54%</span>
-                </div>
+</div>
 
-                <div class="flex justify-between">
-                    <span>🫘 Soja</span>
-                    <span class="red">-0.69%</span>
-                </div>
+<!-- ECONOMIC -->
 
-                <div class="flex justify-between">
-                    <span>🌾 Trigo</span>
-                    <span class="green">+0.88%</span>
-                </div>
+<div class="glass panel">
 
-                <div class="flex justify-between">
-                    <span>🛢️ Aceite</span>
-                    <span class="red">-0.21%</span>
-                </div>
+<h2 class="text-2xl font-bold gold mb-6">
+AI Economic Calendar
+</h2>
 
-            </div>
+<div class="space-y-6">
 
-            <canvas id="feedChart" class="mt-8"></canvas>
+<div class="row">
 
-        </div>
+<p class="font-bold">
+CPI m/m
+</p>
 
-        <!-- MAP -->
+<p class="text-gray-500 text-sm mt-2">
+Higher inflation could strengthen USD and pressure gold.
+</p>
 
-        <div class="card p-6">
+</div>
 
-            <h2 class="text-2xl font-bold mb-5">
-                Mercado Mundial
-            </h2>
+<div class="row">
 
-            <img
-            class="world-map"
-            src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
-            >
+<p class="font-bold">
+Federal Reserve Speech
+</p>
 
-        </div>
+<p class="text-gray-500 text-sm mt-2">
+Monitor hawkish/dovish tone for gold volatility.
+</p>
 
-        <!-- WHY -->
+</div>
 
-        <div class="card p-6">
+<div>
 
-            <h2 class="text-2xl font-bold mb-5">
-                ¿Por qué sube o baja?
-            </h2>
+<p class="font-bold">
+NFP Employment
+</p>
 
-            <div class="space-y-5 text-gray-300 leading-7">
+<p class="text-gray-500 text-sm mt-2">
+Strong labor market data may reduce rate cut expectations.
+</p>
 
-                <p>
-                    🌽 El maíz representa el principal costo feed.
-                </p>
+</div>
 
-                <p>
-                    🫘 China compra enormes cantidades de soja.
-                </p>
+</div>
 
-                <p>
-                    ⛽ El petróleo aumenta logística y fertilizantes.
-                </p>
+</div>
 
-                <p>
-                    🌎 Inflación afecta consumo global.
-                </p>
+</div>
 
-            </div>
+<!-- FOURTH -->
 
-        </div>
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-5 mt-5">
 
-    </div>
+<!-- RESEARCH -->
 
-    <!-- FOURTH -->
+<div class="glass panel">
 
-    <div class="grid grid-cols-1 xl:grid-cols-3 gap-5 mt-5">
+<h2 class="text-2xl font-bold gold mb-6">
+Institutional Research Feed
+</h2>
 
-        <!-- PROTEIN -->
+<div class="space-y-6">
 
-        <div class="card p-6 xl:col-span-2">
+<div class="row">
 
-            <h2 class="text-2xl font-bold mb-5">
-                Proteína Animal y Salud
-            </h2>
+<p class="green font-bold">
+JP Morgan
+</p>
 
-            <p class="text-gray-300 leading-8">
+<p class="text-gray-400 text-sm mt-2">
+Maintaining bullish exposure to gold.
+</p>
 
-                La carne de cerdo contiene proteínas completas,
-                aminoácidos esenciales, zinc, hierro hemo y vitaminas B.
-                Estudios científicos muestran beneficios para desarrollo muscular,
-                recuperación física y producción hormonal.
+</div>
 
-            </p>
+<div class="row">
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-8">
+<p class="red font-bold">
+Goldman Sachs
+</p>
 
-                <div class="bg-black/30 p-5 rounded-xl">
-                    Proteína
-                </div>
+<p class="text-gray-400 text-sm mt-2">
+Watching bond yields closely.
+</p>
 
-                <div class="bg-black/30 p-5 rounded-xl">
-                    Zinc
-                </div>
+</div>
 
-                <div class="bg-black/30 p-5 rounded-xl">
-                    Hierro
-                </div>
+<div>
 
-                <div class="bg-black/30 p-5 rounded-xl">
-                    Vitaminas B
-                </div>
+<p class="blue font-bold">
+BlackRock
+</p>
 
-            </div>
+<p class="text-gray-400 text-sm mt-2">
+Macro uncertainty continues supporting gold demand.
+</p>
 
-        </div>
+</div>
 
-        <!-- AI -->
+</div>
 
-        <div class="card p-6">
+</div>
 
-            <h2 class="text-2xl font-bold mb-6">
-                IA Predictiva
-            </h2>
+<!-- SMART MONEY -->
 
-            <div class="flex justify-center">
+<div class="glass panel">
 
-                <div class="w-52 h-52 rounded-full border-[18px] border-pink-500 flex items-center justify-center glow">
+<h2 class="text-2xl font-bold gold mb-6">
+Smart Money Positioning
+</h2>
 
-                    <div class="text-center">
+<div class="space-y-5">
 
-                        <h2 class="text-6xl font-black">
-                            72%
-                        </h2>
+<div class="flex justify-between row">
+<span>Hedge Funds</span>
+<span class="green">
+Net Long
+</span>
+</div>
 
-                        <p class="pink mt-3">
-                            Probabilidad Alcista
-                        </p>
+<div class="flex justify-between row">
+<span>COT Report</span>
+<span class="green">
+Bullish
+</span>
+</div>
 
-                    </div>
+<div class="flex justify-between row">
+<span>Institutional Flow</span>
+<span class="green">
+Accumulation
+</span>
+</div>
 
-                </div>
+<div class="flex justify-between">
+<span>Risk Sentiment</span>
+<span class="gold">
+Neutral
+</span>
+</div>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
-
-    <!-- FOOTER STATS -->
-
-    <div class="grid grid-cols-2 xl:grid-cols-6 gap-5 mt-5">
-
-        <div class="card p-5">
-            <p class="text-gray-400 text-sm">Producción Mundial</p>
-            <h2 class="text-3xl font-bold mt-3">113M</h2>
-        </div>
-
-        <div class="card p-5">
-            <p class="text-gray-400 text-sm">Comercio Global</p>
-            <h2 class="text-3xl font-bold mt-3">9.3M</h2>
-        </div>
-
-        <div class="card p-5">
-            <p class="text-gray-400 text-sm">Exportaciones</p>
-            <h2 class="text-3xl font-bold mt-3">9.0M</h2>
-        </div>
-
-        <div class="card p-5">
-            <p class="text-gray-400 text-sm">Importaciones</p>
-            <h2 class="text-3xl font-bold mt-3">9.2M</h2>
-        </div>
-
-        <div class="card p-5">
-            <p class="text-gray-400 text-sm">Costo Feed</p>
-            <h2 class="text-3xl font-bold mt-3">428</h2>
-        </div>
-
-        <div class="card p-5">
-            <p class="text-gray-400 text-sm">Margen Porcino</p>
-            <h2 class="text-3xl font-bold mt-3">18%</h2>
-        </div>
-
-    </div>
+</div>
 
 </div>
 
 <script>
 
-const lineCtx = document.getElementById('lineChart');
+const ctx = document.getElementById('goldChart');
 
-new Chart(lineCtx, {
+new Chart(ctx, {
 
 type:'line',
 
 data:{
 
 labels:[
-'23 Abr',
-'30 Abr',
-'7 May',
-'14 May',
-'21 May'
+'MON',
+'TUE',
+'WED',
+'THU',
+'FRI'
 ],
 
 datasets:[{
 
-label:'Precio Global',
+label:'XAUUSD',
 
 data:[
-1.8,
-2.0,
-1.95,
-2.15,
-2.35
+2280,
+2300,
+2295,
+2330,
+2368
 ],
 
-borderColor:'#ff0080',
+borderColor:'#d4af37',
 
-backgroundColor:'rgba(255,0,128,0.12)',
+backgroundColor:'rgba(212,175,55,0.08)',
 
 fill:true,
 
@@ -719,71 +619,22 @@ scales:{
 
 x:{
 ticks:{
-color:'white'
+color:'#888'
 },
 grid:{
-color:'rgba(255,255,255,0.05)'
+color:'rgba(255,255,255,0.03)'
 }
 },
 
 y:{
 ticks:{
-color:'white'
+color:'#888'
 },
 grid:{
-color:'rgba(255,255,255,0.05)'
+color:'rgba(255,255,255,0.03)'
 }
 }
 
-}
-
-}
-
-});
-
-const feedCtx = document.getElementById('feedChart');
-
-new Chart(feedCtx, {
-
-type:'doughnut',
-
-data:{
-
-labels:[
-'Maíz',
-'Soja',
-'Trigo',
-'Otros'
-],
-
-datasets:[{
-
-data:[
-65,
-22,
-8,
-5
-],
-
-backgroundColor:[
-'#ff0080',
-'#7928ca',
-'#00ff88',
-'#00b4ff'
-]
-
-}]
-
-},
-
-options:{
-
-plugins:{
-legend:{
-labels:{
-color:'white'
-}
-}
 }
 
 }
