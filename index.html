@@ -1,566 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- ========================= -->
+<!-- LIVE MACRO NEWS FEED -->
+<!-- ========================= -->
 
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<div class="glass panel">
 
-  <title>Institutional Gold Macro Terminal</title>
+  <h2 class="text-2xl font-bold gold mb-5">
+    Noticias Macro en Vivo
+  </h2>
 
-  <!-- TAILWIND CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <div class="space-y-5">
 
-  <!-- TRADINGVIEW -->
-  <script src="https://s3.tradingview.com/tv.js"></script>
+    <div class="border-b border-gray-800 pb-4">
 
-  <style>
+      <div class="flex justify-between">
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+        <h3 class="green font-bold">
+          Reuters
+        </h3>
 
-    body{
-      background:#050505;
-      color:white;
-      font-family:Arial, sans-serif;
-      overflow-x:hidden;
-    }
+        <span class="text-gray-500 text-sm">
+          EN VIVO
+        </span>
 
-    ::-webkit-scrollbar{
-      width:8px;
-    }
+      </div>
 
-    ::-webkit-scrollbar-thumb{
-      background:#d4af37;
-      border-radius:20px;
-    }
+      <p class="text-gray-400 mt-2 text-sm leading-6">
 
-    .gold{
-      color:#d4af37;
-    }
+        Los rendimientos de los bonos caen mientras los mercados aumentan
+        expectativas de futuros recortes de tasas por parte de la FED.
 
-    .green{
-      color:#00ff95;
-    }
-
-    .red{
-      color:#ff5b5b;
-    }
-
-    .yellow{
-      color:#ffd95b;
-    }
-
-    .glass{
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.08);
-      backdrop-filter:blur(10px);
-    }
-
-    .panel{
-      border-radius:24px;
-      padding:24px;
-      transition:0.3s ease;
-    }
-
-    .panel:hover{
-      border:1px solid rgba(212,175,55,0.25);
-      transform:translateY(-2px);
-    }
-
-    .glow{
-      box-shadow:0 0 30px rgba(212,175,55,0.12);
-    }
-
-    .ticker{
-      white-space:nowrap;
-      animation:ticker 22s linear infinite;
-    }
-
-    @keyframes ticker{
-
-      0%{
-        transform:translateX(100%);
-      }
-
-      100%{
-        transform:translateX(-100%);
-      }
-
-    }
-
-    .live-dot{
-      width:10px;
-      height:10px;
-      background:#00ff95;
-      border-radius:50%;
-      animation:pulse 1.5s infinite;
-    }
-
-    @keyframes pulse{
-
-      0%{
-        opacity:0.4;
-      }
-
-      50%{
-        opacity:1;
-      }
-
-      100%{
-        opacity:0.4;
-      }
-
-    }
-
-    .heatbar{
-      width:100%;
-      height:8px;
-      background:#1b1b1b;
-      border-radius:20px;
-      overflow:hidden;
-    }
-
-    .heatfill{
-      height:100%;
-      border-radius:20px;
-    }
-
-    .background-grid{
-      background-image:
-      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-
-      background-size:40px 40px;
-    }
-
-  </style>
-
-</head>
-
-<body class="background-grid">
-
-<div class="p-6">
-
-  <!-- HEADER -->
-
-  <header class="flex flex-col xl:flex-row justify-between gap-6 items-start xl:items-center mb-8">
-
-    <div>
-
-      <h1 class="text-5xl font-bold gold">
-        GOLD MACRO TERMINAL
-      </h1>
-
-      <p class="text-gray-400 mt-3 text-lg">
-        Institutional AI Narrative Dashboard
       </p>
 
     </div>
 
-    <div class="flex flex-wrap gap-4">
+    <div class="border-b border-gray-800 pb-4">
 
-      <div class="glass panel glow">
+      <div class="flex justify-between">
 
-        <p class="text-gray-400 text-sm">
-          Institutional Sentiment
-        </p>
+        <h3 class="yellow font-bold">
+          Bloomberg
+        </h3>
 
-        <h2 id="sentiment" class="text-3xl font-bold green mt-2">
-          STRONG BULLISH
-        </h2>
-
-      </div>
-
-      <div class="glass panel">
-
-        <p class="text-gray-400 text-sm">
-          FED Narrative
-        </p>
-
-        <h2 class="text-2xl yellow font-bold mt-2">
-          DOVISH
-        </h2>
+        <span class="text-gray-500 text-sm">
+          EN VIVO
+        </span>
 
       </div>
 
-      <div class="glass panel">
+      <p class="text-gray-400 mt-2 text-sm leading-6">
 
-        <p class="text-gray-400 text-sm">
-          Market Risk
-        </p>
+        El oro se mantiene fuerte gracias a la incertidumbre geopolítica
+        y el posicionamiento defensivo institucional.
 
-        <h2 class="text-2xl red font-bold mt-2">
-          HIGH
-        </h2>
-
-      </div>
+      </p>
 
     </div>
 
-  </header>
+    <div>
 
-  <!-- TICKER -->
+      <div class="flex justify-between">
 
-  <div class="glass panel overflow-hidden mb-8">
+        <h3 class="red font-bold">
+          FinancialJuice
+        </h3>
 
-    <div id="ticker" class="ticker text-lg">
-
-      XAUUSD 3345.20 ▲ |
-      DXY 101.22 ▼ |
-      US10Y 4.21% ▲ |
-      SP500 5602 ▼ |
-      VIX 18.42 ▲ |
-      OIL 78.22 ▲ |
-      BTC 102554 ▲
-
-    </div>
-
-  </div>
-
-  <!-- MAIN GRID -->
-
-  <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
-
-    <!-- LEFT -->
-
-    <div class="xl:col-span-2 space-y-6">
-
-      <!-- NARRATIVE -->
-
-      <div class="glass panel glow">
-
-        <div class="flex justify-between items-center mb-5">
-
-          <h2 class="text-2xl font-bold gold">
-            Gold Narrative Engine
-          </h2>
-
-          <div class="flex items-center gap-2">
-
-            <div class="live-dot"></div>
-
-            <span class="green">
-              LIVE AI
-            </span>
-
-          </div>
-
-        </div>
-
-        <p id="narrative" class="text-gray-300 leading-8 text-lg">
-
-          Loading institutional narrative...
-
-        </p>
+        <span class="text-gray-500 text-sm">
+          EN VIVO
+        </span>
 
       </div>
 
-      <!-- TRADINGVIEW PRO -->
+      <p class="text-gray-400 mt-2 text-sm leading-6">
 
-      <div class="glass panel">
+        El mercado incrementa probabilidades de flexibilización monetaria futura.
 
-        <div class="flex justify-between items-center mb-5">
-
-          <h2 class="text-2xl font-bold gold">
-            XAUUSD Institutional Structure
-          </h2>
-
-          <span class="text-gray-400">
-            LIVE MARKET
-          </span>
-
-        </div>
-
-        <div id="tradingview_chart" style="height:600px;"></div>
-
-      </div>
-
-      <!-- LOWER PANELS -->
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-        <!-- CORRELATIONS -->
-
-        <div class="glass panel">
-
-          <h2 class="text-xl font-bold gold mb-4">
-            Correlation Matrix
-          </h2>
-
-          <div class="space-y-4">
-
-            <div class="flex justify-between">
-              <span>XAUUSD vs DXY</span>
-              <span class="red">-0.88</span>
-            </div>
-
-            <div class="flex justify-between">
-              <span>XAUUSD vs US10Y</span>
-              <span class="red">-0.71</span>
-            </div>
-
-            <div class="flex justify-between">
-              <span>XAUUSD vs VIX</span>
-              <span class="green">+0.64</span>
-            </div>
-
-            <div class="flex justify-between">
-              <span>XAUUSD vs SP500</span>
-              <span class="yellow">-0.21</span>
-            </div>
-
-          </div>
-
-        </div>
-
-        <!-- SMART MONEY -->
-
-        <div class="glass panel">
-
-          <h2 class="text-xl font-bold gold mb-4">
-            Smart Money Positioning
-          </h2>
-
-          <div class="space-y-4">
-
-            <div class="flex justify-between">
-              <span>Hedge Funds</span>
-              <span class="green">Net Long</span>
-            </div>
-
-            <div class="flex justify-between">
-              <span>Commercials</span>
-              <span class="red">Net Short</span>
-            </div>
-
-            <div class="flex justify-between">
-              <span>Institutional Flow</span>
-              <span class="green">Accumulation</span>
-            </div>
-
-            <div class="flex justify-between">
-              <span>Liquidity</span>
-              <span class="yellow">Moderate</span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- RIGHT -->
-
-    <div class="space-y-6">
-
-      <!-- MACRO HEATMAP -->
-
-      <div class="glass panel">
-
-        <h2 class="text-2xl font-bold gold mb-5">
-          Macro Heatmap
-        </h2>
-
-        <div class="space-y-5">
-
-          <div>
-
-            <div class="flex justify-between mb-2">
-              <span>Inflation</span>
-              <span class="green">Bullish</span>
-            </div>
-
-            <div class="heatbar">
-              <div class="heatfill bg-green-400 w-4/5"></div>
-            </div>
-
-          </div>
-
-          <div>
-
-            <div class="flex justify-between mb-2">
-              <span>DXY</span>
-              <span class="red">Bearish</span>
-            </div>
-
-            <div class="heatbar">
-              <div class="heatfill bg-red-400 w-2/5"></div>
-            </div>
-
-          </div>
-
-          <div>
-
-            <div class="flex justify-between mb-2">
-              <span>Liquidity</span>
-              <span class="green">Expanding</span>
-            </div>
-
-            <div class="heatbar">
-              <div class="heatfill bg-green-400 w-3/4"></div>
-            </div>
-
-          </div>
-
-          <div>
-
-            <div class="flex justify-between mb-2">
-              <span>Bond Yields</span>
-              <span class="yellow">Neutral</span>
-            </div>
-
-            <div class="heatbar">
-              <div class="heatfill bg-yellow-400 w-2/4"></div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- RESEARCH -->
-
-      <div class="glass panel">
-
-        <h2 class="text-2xl font-bold gold mb-5">
-          Institutional Research Feed
-        </h2>
-
-        <div class="space-y-5">
-
-          <div class="border-b border-gray-800 pb-4">
-
-            <div class="flex justify-between">
-
-              <h3 class="green font-bold">
-                JP Morgan
-              </h3>
-
-              <span class="text-gray-500 text-sm">
-                LIVE
-              </span>
-
-            </div>
-
-            <p class="text-gray-400 mt-2 text-sm leading-6">
-
-              Maintaining constructive outlook on gold amid global uncertainty.
-
-            </p>
-
-          </div>
-
-          <div class="border-b border-gray-800 pb-4">
-
-            <div class="flex justify-between">
-
-              <h3 class="yellow font-bold">
-                Goldman Sachs
-              </h3>
-
-              <span class="text-gray-500 text-sm">
-                LIVE
-              </span>
-
-            </div>
-
-            <p class="text-gray-400 mt-2 text-sm leading-6">
-
-              Treasury yields remain key drivers for precious metals.
-
-            </p>
-
-          </div>
-
-          <div>
-
-            <div class="flex justify-between">
-
-              <h3 class="red font-bold">
-                BlackRock
-              </h3>
-
-              <span class="text-gray-500 text-sm">
-                LIVE
-              </span>
-
-            </div>
-
-            <p class="text-gray-400 mt-2 text-sm leading-6">
-
-              Risk management flows continue supporting defensive positioning.
-
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- ECONOMIC CALENDAR -->
-
-      <div class="glass panel">
-
-        <h2 class="text-2xl font-bold gold mb-5">
-          AI Economic Calendar
-        </h2>
-
-        <div class="space-y-5">
-
-          <div class="border-l-4 border-yellow-500 pl-4">
-
-            <div class="flex justify-between">
-
-              <h3 class="font-bold">
-                CPI m/m
-              </h3>
-
-              <span class="yellow">
-                HIGH IMPACT
-              </span>
-
-            </div>
-
-            <p class="text-gray-400 text-sm mt-2 leading-6">
-
-              Higher inflation may strengthen the dollar and pressure gold.
-
-            </p>
-
-          </div>
-
-          <div class="border-l-4 border-green-500 pl-4">
-
-            <div class="flex justify-between">
-
-              <h3 class="font-bold">
-                FED SPEECH
-              </h3>
-
-              <span class="green">
-                MEDIUM IMPACT
-              </span>
-
-            </div>
-
-            <p class="text-gray-400 text-sm mt-2 leading-6">
-
-              Dovish commentary could reinforce bullish momentum in XAUUSD.
-
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
+      </p>
 
     </div>
 
@@ -568,126 +82,215 @@
 
 </div>
 
-<!-- JAVASCRIPT -->
+<!-- ========================= -->
+<!-- MOTOR DXY -->
+<!-- ========================= -->
 
-<script>
+<div class="glass panel">
 
-  // =========================
-  // AI NARRATIVE ENGINE
-  // =========================
+  <h2 class="text-2xl font-bold gold mb-5">
+    Motor de Dominancia DXY
+  </h2>
 
-  const narratives = [
+  <div class="space-y-5">
 
-    "Gold strengthens as institutional investors rotate into safe haven assets amid geopolitical tensions and falling Treasury yields.",
+    <div class="flex justify-between">
 
-    "XAUUSD remains supported while traders increase expectations of future Federal Reserve rate cuts.",
+      <span>Tendencia Dólar</span>
 
-    "Institutional flows continue favoring precious metals due to global macroeconomic uncertainty.",
+      <span class="red">
+        Bajista
+      </span>
 
-    "Gold prices stabilize while markets monitor inflation data and Treasury bond volatility.",
+    </div>
 
-    "Safe haven demand continues supporting gold as recession fears rise across global markets."
+    <div class="flex justify-between">
 
-  ];
+      <span>Liquidez USD</span>
 
-  function updateNarrative(){
+      <span class="green">
+        Expansiva
+      </span>
 
-    const random =
-      narratives[Math.floor(Math.random() * narratives.length)];
+    </div>
 
-    document.getElementById("narrative").innerHTML = random;
+    <div class="flex justify-between">
 
-  }
+      <span>Presión FED</span>
 
-  updateNarrative();
+      <span class="yellow">
+        Neutral
+      </span>
 
-  setInterval(updateNarrative, 12000);
+    </div>
 
-  // =========================
-  // SENTIMENT ROTATION
-  // =========================
+    <div class="flex justify-between">
 
-  const sentiments = [
+      <span>Correlación Oro</span>
 
-    "STRONG BULLISH",
-    "BULLISH",
-    "NEUTRAL",
-    "BEARISH"
+      <span class="green">
+        Positiva
+      </span>
 
-  ];
+    </div>
 
-  let sentimentIndex = 0;
+  </div>
 
-  setInterval(()=>{
+</div>
 
-    sentimentIndex++;
+<!-- ========================= -->
+<!-- MOTOR DE BONOS -->
+<!-- ========================= -->
 
-    if(sentimentIndex >= sentiments.length){
-      sentimentIndex = 0;
-    }
+<div class="glass panel">
 
-    document.getElementById("sentiment").innerHTML =
-      sentiments[sentimentIndex];
+  <h2 class="text-2xl font-bold gold mb-5">
+    Motor Mercado de Bonos
+  </h2>
 
-  },9000);
+  <div class="space-y-5">
 
-  // =========================
-  // TRADINGVIEW PRO CHART
-  // =========================
+    <div class="flex justify-between">
 
-  new TradingView.widget({
+      <span>Bono US10Y</span>
 
-    "autosize": true,
+      <span class="red">
+        4.21%
+      </span>
 
-    "symbol": "OANDA:XAUUSD",
+    </div>
 
-    "interval": "15",
+    <div class="flex justify-between">
 
-    "timezone": "Etc/UTC",
+      <span>Bono 2Y</span>
 
-    "theme": "dark",
+      <span class="yellow">
+        4.88%
+      </span>
 
-    "style": "1",
+    </div>
 
-    "locale": "en",
+    <div class="flex justify-between">
 
-    "toolbar_bg": "#050505",
+      <span>Curva Rendimientos</span>
 
-    "enable_publishing": false,
+      <span class="green">
+        Invertida
+      </span>
 
-    "hide_side_toolbar": false,
+    </div>
 
-    "allow_symbol_change": true,
+    <div class="flex justify-between">
 
-    "save_image": true,
+      <span>Impacto Oro</span>
 
-    "withdateranges": true,
+      <span class="red">
+        Presión Bajista
+      </span>
 
-    "details": true,
+    </div>
 
-    "calendar": true,
+  </div>
 
-    "studies": [
+</div>
 
-      "Volume@tv-basicstudies",
-      "MASimple@tv-basicstudies"
+<!-- ========================= -->
+<!-- MOTOR DE PROBABILIDAD -->
+<!-- ========================= -->
 
-    ],
+<div class="glass panel glow">
 
-    "studies_overrides": {
+  <h2 class="text-2xl font-bold gold mb-5">
+    Motor de Probabilidad Oro
+  </h2>
 
-      "volume.volume.color.0": "#ff5b5b",
-      "volume.volume.color.1": "#00ff95"
+  <div class="space-y-6">
 
-    },
+    <div>
 
-    "container_id": "tradingview_chart"
+      <div class="flex justify-between mb-2">
 
-  });
+        <span>Probabilidad Alcista</span>
 
-</script>
+        <span class="green">
+          74%
+        </span>
 
-</body>
-</html>
+      </div>
 
+      <div class="heatbar">
+        <div class="heatfill bg-green-400 w-3/4"></div>
+      </div>
 
+    </div>
+
+    <div>
+
+      <div class="flex justify-between mb-2">
+
+        <span>Probabilidad Bajista</span>
+
+        <span class="red">
+          26%
+        </span>
+
+      </div>
+
+      <div class="heatbar">
+        <div class="heatfill bg-red-400 w-1/4"></div>
+      </div>
+
+    </div>
+
+    <div class="pt-4 border-t border-gray-800">
+
+      <p class="text-gray-400 text-sm leading-6">
+
+        El modelo de IA favorece continuidad alcista debido al debilitamiento
+        del dólar, incertidumbre geopolítica y expectativas de recortes de tasas.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- FOREX FACTORY -->
+<!-- ========================= -->
+
+<div class="glass panel">
+
+  <h2 class="text-2xl font-bold gold mb-5">
+    Calendario Forex Factory
+  </h2>
+
+  <iframe
+    src="https://www.forexfactory.com/calendar"
+    width="100%"
+    height="500"
+    style="border:none; border-radius:18px;"
+  ></iframe>
+
+</div>
+
+<!-- ========================= -->
+<!-- INVESTING CALENDAR -->
+<!-- ========================= -->
+
+<div class="glass panel">
+
+  <h2 class="text-2xl font-bold gold mb-5">
+    Calendario Investing.com
+  </h2>
+
+  <iframe
+    src="https://www.investing.com/economic-calendar/"
+    width="100%"
+    height="500"
+    style="border:none; border-radius:18px;"
+  ></iframe>
+
+</div>
