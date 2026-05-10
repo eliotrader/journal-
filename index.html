@@ -3,643 +3,99 @@
 
 <head>
 
-<meta charset="UTF-8" />
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>333 MACRO TERMINAL</title>
+<title>EliotFWCapital AI Terminal</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
-background:#050505;
-color:white;
-font-family:'Inter',sans-serif;
-overflow-x:hidden;
-}
-
-.sidebar{
-width:260px;
-height:100vh;
-position:fixed;
-left:0;
-top:0;
-background:#060b1b;
-border-right:1px solid rgba(255,255,255,0.05);
-padding:24px;
-}
-
-.main{
-margin-left:260px;
-padding:24px;
+  background:#050505;
+  color:white;
+  font-family:Arial;
 }
 
 .glass{
-background:rgba(255,255,255,0.03);
-border:1px solid rgba(255,255,255,0.06);
-backdrop-filter:blur(12px);
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:16px;
+  padding:20px;
 }
 
-.panel{
-border-radius:24px;
-padding:22px;
-box-shadow:
-0 0 0 1px rgba(255,255,255,0.02),
-0 10px 40px rgba(0,0,0,0.4);
-}
-
-.gold{
-color:#d4af37;
-}
-
-.green{
-color:#00ff88;
-}
-
-.red{
-color:#ff4d6d;
-}
-
-.blue{
-color:#00b4ff;
-}
-
-.active{
-background:linear-gradient(
-90deg,
-#d4af37,
-#8b6b17
-);
-}
-
-.metric{
-font-size:42px;
-font-weight:800;
-}
-
-.small{
-font-size:12px;
-color:#777;
-}
-
-.row{
-border-bottom:1px solid rgba(255,255,255,0.04);
-padding-bottom:14px;
-}
+.gold{color:#d4af37}
+.green{color:#00ff95}
+.red{color:#ff5b5b}
 
 </style>
 
 </head>
 
-<body>
+<body class="p-6">
 
-<!-- SIDEBAR -->
-
-<div class="sidebar">
-
-<div class="mb-10">
-
-<h1 class="text-5xl font-black gold">
-333
+<h1 class="text-3xl gold mb-6">
+EliotFWCapital — AI Macro Terminal
 </h1>
 
-<h2 class="text-3xl font-bold">
-MACRO
-</h2>
+<!-- IA PANEL -->
 
-<p class="text-gray-500 mt-4 text-sm leading-6">
-Institutional Macro Intelligence
-</p>
+<div class="glass mb-6">
 
-</div>
+  <h2 class="gold text-xl mb-3">
+    Interpretación IA Oro (Macro Institucional)
+  </h2>
 
-<div class="space-y-2">
-
-<div class="active p-4 rounded-xl font-semibold">
-Dashboard
-</div>
-
-<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
-Narrative Engine
-</div>
-
-<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
-Institutional Sentiment
-</div>
-
-<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
-Macro Heatmap
-</div>
-
-<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
-Market Panel
-</div>
-
-<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
-Economic Calendar
-</div>
-
-<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
-Research Feed
-</div>
-
-<div class="hover:bg-white/5 p-4 rounded-xl cursor-pointer">
-Smart Money
-</div>
+  <p id="analysis" class="text-gray-300 leading-7">
+    Cargando análisis...
+  </p>
 
 </div>
 
-</div>
-
-<!-- MAIN -->
-
-<div class="main">
-
-<!-- TOP -->
-
-<div class="flex justify-between items-center mb-8">
-
-<div>
-
-<h1 class="text-4xl font-bold gold">
-333 MACRO TERMINAL
-</h1>
-
-<p class="text-gray-500 mt-2">
-Institutional Narrative Dashboard
-</p>
-
-</div>
-
-<div class="glass panel">
-
-<p class="small">
-Institutional Sentiment
-</p>
-
-<h2 class="text-3xl font-bold green">
-BULLISH
-</h2>
-
-</div>
-
-</div>
-
-<!-- TOP METRICS -->
-
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5">
-
-<div class="glass panel">
-
-<p class="small">
-XAUUSD
-</p>
-
-<h2 class="metric gold">
-2368
-</h2>
-
-<p class="green mt-3">
-+1.82%
-</p>
-
-</div>
-
-<div class="glass panel">
-
-<p class="small">
-DXY
-</p>
-
-<h2 class="metric">
-104.3
-</h2>
-
-<p class="red mt-3">
--0.42%
-</p>
-
-</div>
-
-<div class="glass panel">
-
-<p class="small">
-US10Y
-</p>
-
-<h2 class="metric">
-4.28
-</h2>
-
-<p class="red mt-3">
-+0.63%
-</p>
-
-</div>
-
-<div class="glass panel">
-
-<p class="small">
-SP500
-</p>
-
-<h2 class="metric">
-5310
-</h2>
-
-<p class="green mt-3">
-+0.84%
-</p>
-
-</div>
-
-<div class="glass panel">
-
-<p class="small">
-VIX
-</p>
-
-<h2 class="metric">
-13.4
-</h2>
-
-<p class="green mt-3">
--2.10%
-</p>
-
-</div>
-
-</div>
-
-<!-- SECOND -->
-
-<div class="grid grid-cols-1 xl:grid-cols-3 gap-5 mt-5">
-
-<!-- NARRATIVE -->
-
-<div class="glass panel xl:col-span-2">
-
-<h2 class="text-2xl font-bold gold mb-5">
-Gold Narrative Engine
-</h2>
-
-<p class="text-gray-300 leading-8 text-lg">
-
-Gold strengthens as markets increase expectations of
-future Federal Reserve rate cuts while softer inflation
-data weakens the dollar. Institutional flows continue
-favoring safe haven assets amid geopolitical uncertainty.
-
-</p>
-
-<div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-8">
-
-<div class="glass panel">
-<p class="small">USD</p>
-<h2 class="red text-2xl font-bold mt-2">
-Bearish
-</h2>
-</div>
-
-<div class="glass panel">
-<p class="small">Inflation</p>
-<h2 class="green text-2xl font-bold mt-2">
-Bullish
-</h2>
-</div>
-
-<div class="glass panel">
-<p class="small">Liquidity</p>
-<h2 class="green text-2xl font-bold mt-2">
-High
-</h2>
-</div>
-
-<div class="glass panel">
-<p class="small">Risk</p>
-<h2 class="gold text-2xl font-bold mt-2">
-Neutral
-</h2>
-</div>
-
-</div>
-
-</div>
-
-<!-- HEATMAP -->
-
-<div class="glass panel">
-
-<h2 class="text-2xl font-bold gold mb-5">
-Macro Heatmap
-</h2>
-
-<div class="space-y-5">
-
-<div class="flex justify-between row">
-<span>DXY</span>
-<span class="red">
-Bearish
-</span>
-</div>
-
-<div class="flex justify-between row">
-<span>US10Y</span>
-<span class="gold">
-Neutral
-</span>
-</div>
-
-<div class="flex justify-between row">
-<span>Inflation</span>
-<span class="green">
-Bullish
-</span>
-</div>
-
-<div class="flex justify-between row">
-<span>Liquidity</span>
-<span class="green">
-Bullish
-</span>
-</div>
-
-<div class="flex justify-between">
-<span>Risk Appetite</span>
-<span class="red">
-Bearish
-</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- THIRD -->
-
-<div class="grid grid-cols-1 xl:grid-cols-2 gap-5 mt-5">
-
-<!-- CHART -->
-
-<div class="glass panel">
-
-<div class="flex justify-between items-center mb-6">
-
-<h2 class="text-2xl font-bold gold">
-XAUUSD Trend
-</h2>
-
-<div class="green text-3xl font-bold">
-2368
-</div>
-
-</div>
-
-<canvas id="goldChart"></canvas>
-
-</div>
-
-<!-- ECONOMIC -->
-
-<div class="glass panel">
-
-<h2 class="text-2xl font-bold gold mb-6">
-AI Economic Calendar
-</h2>
-
-<div class="space-y-6">
-
-<div class="row">
-
-<p class="font-bold">
-CPI m/m
-</p>
-
-<p class="text-gray-500 text-sm mt-2">
-Higher inflation could strengthen USD and pressure gold.
-</p>
-
-</div>
-
-<div class="row">
-
-<p class="font-bold">
-Federal Reserve Speech
-</p>
-
-<p class="text-gray-500 text-sm mt-2">
-Monitor hawkish/dovish tone for gold volatility.
-</p>
-
-</div>
-
-<div>
-
-<p class="font-bold">
-NFP Employment
-</p>
-
-<p class="text-gray-500 text-sm mt-2">
-Strong labor market data may reduce rate cut expectations.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- FOURTH -->
-
-<div class="grid grid-cols-1 xl:grid-cols-2 gap-5 mt-5">
-
-<!-- RESEARCH -->
-
-<div class="glass panel">
-
-<h2 class="text-2xl font-bold gold mb-6">
-Institutional Research Feed
-</h2>
-
-<div class="space-y-6">
-
-<div class="row">
-
-<p class="green font-bold">
-JP Morgan
-</p>
-
-<p class="text-gray-400 text-sm mt-2">
-Maintaining bullish exposure to gold.
-</p>
-
-</div>
-
-<div class="row">
-
-<p class="red font-bold">
-Goldman Sachs
-</p>
-
-<p class="text-gray-400 text-sm mt-2">
-Watching bond yields closely.
-</p>
-
-</div>
-
-<div>
-
-<p class="blue font-bold">
-BlackRock
-</p>
-
-<p class="text-gray-400 text-sm mt-2">
-Macro uncertainty continues supporting gold demand.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- SMART MONEY -->
-
-<div class="glass panel">
-
-<h2 class="text-2xl font-bold gold mb-6">
-Smart Money Positioning
-</h2>
-
-<div class="space-y-5">
-
-<div class="flex justify-between row">
-<span>Hedge Funds</span>
-<span class="green">
-Net Long
-</span>
-</div>
-
-<div class="flex justify-between row">
-<span>COT Report</span>
-<span class="green">
-Bullish
-</span>
-</div>
-
-<div class="flex justify-between row">
-<span>Institutional Flow</span>
-<span class="green">
-Accumulation
-</span>
-</div>
-
-<div class="flex justify-between">
-<span>Risk Sentiment</span>
-<span class="gold">
-Neutral
-</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
+<!-- DATA -->
+
+<div class="grid grid-cols-2 gap-4">
+
+  <div class="glass">
+    <h3 class="gold">DXY</h3>
+    <p id="dxy">...</p>
+  </div>
+
+  <div class="glass">
+    <h3 class="gold">US10Y</h3>
+    <p id="bond">...</p>
+  </div>
+
+  <div class="glass">
+    <h3 class="gold">Inflación</h3>
+    <p id="cpi">...</p>
+  </div>
+
+  <div class="glass">
+    <h3 class="gold">Sentimiento</h3>
+    <p id="sentiment">...</p>
+  </div>
 
 </div>
 
 <script>
 
-const ctx = document.getElementById('goldChart');
+async function load(){
 
-new Chart(ctx, {
+  const res = await fetch("http://localhost:3000/gold-ai");
+  const data = await res.json();
 
-type:'line',
-
-data:{
-
-labels:[
-'MON',
-'TUE',
-'WED',
-'THU',
-'FRI'
-],
-
-datasets:[{
-
-label:'XAUUSD',
-
-data:[
-2280,
-2300,
-2295,
-2330,
-2368
-],
-
-borderColor:'#d4af37',
-
-backgroundColor:'rgba(212,175,55,0.08)',
-
-fill:true,
-
-tension:0.4
-
-}]
-
-},
-
-options:{
-
-plugins:{
-legend:{
-labels:{
-color:'white'
-}
-}
-},
-
-scales:{
-
-x:{
-ticks:{
-color:'#888'
-},
-grid:{
-color:'rgba(255,255,255,0.03)'
-}
-},
-
-y:{
-ticks:{
-color:'#888'
-},
-grid:{
-color:'rgba(255,255,255,0.03)'
-}
-}
+  document.getElementById("analysis").innerText = data.analysis;
+  document.getElementById("dxy").innerText = data.dxy;
+  document.getElementById("bond").innerText = data.bond;
+  document.getElementById("cpi").innerText = data.cpi;
+  document.getElementById("sentiment").innerText = data.sentiment;
 
 }
 
-}
-
-});
+load();
+setInterval(load, 15000);
 
 </script>
 
