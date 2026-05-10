@@ -1,578 +1,668 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>333 MACRO - Inteligencia Global del Cerdo</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<title>333 MACRO</title>
 
-  <style>
-    body{
-      background:#050816;
-      color:white;
-      font-family:Arial, Helvetica, sans-serif;
-    }
+<script src="https://cdn.tailwindcss.com"></script>
 
-    .glass{
-      background:rgba(255,255,255,0.05);
-      backdrop-filter:blur(12px);
-      border:1px solid rgba(255,255,255,0.08);
-    }
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    .green{
-      color:#00ff88;
-    }
+<style>
 
-    .red{
-      color:#ff4d6d;
-    }
+body{
+  background:#050816;
+  color:white;
+  font-family:Arial, Helvetica, sans-serif;
+}
 
-    .card-hover:hover{
-      transform:translateY(-5px);
-      transition:0.3s;
-    }
+.sidebar{
+  width:260px;
+  background:#070b1d;
+  border-right:1px solid rgba(255,255,255,0.08);
+}
 
-    .gradient{
-      background:linear-gradient(90deg,#00ff88,#00b4ff);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
+.card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+}
 
-    .news-scroll{
-      animation:scroll 25s linear infinite;
-    }
+.active{
+  background:linear-gradient(90deg,#ff0080,#7928ca);
+}
 
-    @keyframes scroll{
-      0%{transform:translateX(100%)}
-      100%{transform:translateX(-100%)}
-    }
-  </style>
+.green{
+  color:#00ff88;
+}
+
+.red{
+  color:#ff4d6d;
+}
+
+.pink{
+  color:#ff0080;
+}
+
+.glow{
+  box-shadow:0 0 25px rgba(255,0,128,0.2);
+}
+
+</style>
+
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<div class="flex min-h-screen">
 
-  <header class="p-6 border-b border-gray-800 flex justify-between items-center">
+<!-- SIDEBAR -->
+
+<div class="sidebar p-6 hidden lg:block">
+
+  <div class="mb-10">
+
+    <h1 class="text-6xl font-black pink">
+      333
+    </h1>
+
+    <h2 class="text-4xl font-bold">
+      MACRO
+    </h2>
+
+    <p class="text-gray-400 mt-4 leading-7">
+      Inteligencia global del mercado porcino
+    </p>
+
+  </div>
+
+  <div class="space-y-3">
+
+    <div class="active rounded-xl p-4 cursor-pointer">
+      Dashboard
+    </div>
+
+    <div class="hover:bg-white/5 rounded-xl p-4 cursor-pointer">
+      Precios del Cerdo
+    </div>
+
+    <div class="hover:bg-white/5 rounded-xl p-4 cursor-pointer">
+      Materias Primas
+    </div>
+
+    <div class="hover:bg-white/5 rounded-xl p-4 cursor-pointer">
+      Impacto Económico
+    </div>
+
+    <div class="hover:bg-white/5 rounded-xl p-4 cursor-pointer">
+      Países y Consumo
+    </div>
+
+    <div class="hover:bg-white/5 rounded-xl p-4 cursor-pointer">
+      Mapa Mundial
+    </div>
+
+    <div class="hover:bg-white/5 rounded-xl p-4 cursor-pointer">
+      Producción Global
+    </div>
+
+    <div class="hover:bg-white/5 rounded-xl p-4 cursor-pointer">
+      Costos Feed
+    </div>
+
+    <div class="hover:bg-white/5 rounded-xl p-4 cursor-pointer">
+      Noticias
+    </div>
+
+    <div class="hover:bg-white/5 rounded-xl p-4 cursor-pointer">
+      IA Predictiva
+    </div>
+
+  </div>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="flex-1 p-6">
+
+  <!-- TOP -->
+
+  <div class="flex justify-between items-center mb-8">
 
     <div>
-      <h1 class="text-4xl font-bold gradient">
-        333 MACRO
+
+      <h1 class="text-3xl font-bold">
+        Mercado Global en Tiempo Real
       </h1>
 
       <p class="text-gray-400 mt-2">
-        Inteligencia Global del Mercado Porcino
+        Datos económicos del mercado porcino mundial
       </p>
-    </div>
-
-    <div class="text-right">
-      <p class="text-sm text-gray-400">Estado del mercado</p>
-      <p class="green font-bold text-xl">ALCISTA</p>
-    </div>
-
-  </header>
-
-  <!-- NOTICIAS -->
-
-  <div class="overflow-hidden border-b border-gray-800 py-3">
-    <div class="news-scroll whitespace-nowrap text-sm text-gray-300">
-
-      ⚠️ China incrementa importaciones de soja |
-      📈 El maíz sube 3.2% |
-      🐖 El precio del cerdo en Europa alcanza máximos |
-      ⛽ Petróleo sube y aumenta costos logísticos |
-      🌎 Brasil aumenta exportaciones porcinas
 
     </div>
+
+    <div class="flex items-center gap-5">
+
+      <div class="card rounded-xl p-4">
+        USD
+      </div>
+
+      <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center font-bold">
+        LC
+      </div>
+
+    </div>
+
   </div>
 
-  <!-- DASHBOARD -->
+  <!-- TOP STATS -->
 
-  <main class="p-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5">
 
-    <!-- GRID -->
+    <div class="card glow rounded-2xl p-5">
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <p class="text-gray-400 text-sm">
+        Cerdo Promedio Global
+      </p>
 
-      <!-- CARD -->
-
-      <div class="glass rounded-2xl p-5 card-hover">
-
-        <h2 class="text-gray-400 text-sm">
-          Precio Global Cerdo
-        </h2>
-
-        <p class="text-3xl font-bold mt-2">
-          $2.48/kg
-        </p>
-
-        <p class="green mt-3">
-          +4.2%
-        </p>
-
-      </div>
-
-      <div class="glass rounded-2xl p-5 card-hover">
-
-        <h2 class="text-gray-400 text-sm">
-          Maíz
-        </h2>
-
-        <p class="text-3xl font-bold mt-2">
-          $5.62
-        </p>
-
-        <p class="red mt-3">
-          +1.9%
-        </p>
-
-      </div>
-
-      <div class="glass rounded-2xl p-5 card-hover">
-
-        <h2 class="text-gray-400 text-sm">
-          Harina de Soja
-        </h2>
-
-        <p class="text-3xl font-bold mt-2">
-          $412
-        </p>
-
-        <p class="green mt-3">
-          +2.6%
-        </p>
-
-      </div>
-
-      <div class="glass rounded-2xl p-5 card-hover">
-
-        <h2 class="text-gray-400 text-sm">
-          Petróleo
-        </h2>
-
-        <p class="text-3xl font-bold mt-2">
-          $84
-        </p>
-
-        <p class="red mt-3">
-          +1.2%
-        </p>
-
-      </div>
-
-    </div>
-
-    <!-- GRAFICOS -->
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-
-      <div class="glass rounded-2xl p-6">
-
-        <h2 class="text-2xl font-bold mb-5">
-          Precio del Cerdo
-        </h2>
-
-        <canvas id="pigChart"></canvas>
-
-      </div>
-
-      <div class="glass rounded-2xl p-6">
-
-        <h2 class="text-2xl font-bold mb-5">
-          Costos de Alimentación
-        </h2>
-
-        <canvas id="feedChart"></canvas>
-
-      </div>
-
-    </div>
-
-    <!-- EXPLICACION ECONOMICA -->
-
-    <div class="glass rounded-2xl p-6 mt-8">
-
-      <h2 class="text-3xl font-bold mb-5">
-        Explicación Macroeconómica
+      <h2 class="text-4xl font-bold mt-3">
+        2.23
       </h2>
 
-      <div class="space-y-6">
-
-        <div>
-
-          <h3 class="text-xl font-bold green">
-            ¿Por qué sube el precio del cerdo?
-          </h3>
-
-          <p class="text-gray-300 mt-2 leading-8">
-            El precio del cerdo aumenta cuando suben los costos de alimentación,
-            especialmente el maíz y la harina de soja.
-            China consume enormes cantidades de proteína animal y cualquier
-            incremento en la demanda impacta el mercado global.
-          </p>
-
-        </div>
-
-        <div>
-
-          <h3 class="text-xl font-bold green">
-            Impacto del petróleo
-          </h3>
-
-          <p class="text-gray-300 mt-2 leading-8">
-            El petróleo afecta el transporte marítimo, fertilizantes y logística agrícola.
-            Cuando el petróleo sube, aumenta el costo de producir y distribuir alimento porcino.
-          </p>
-
-        </div>
-
-        <div>
-
-          <h3 class="text-xl font-bold green">
-            Materias primas más importantes
-          </h3>
-
-          <ul class="mt-3 text-gray-300 space-y-2">
-
-            <li>🌽 Maíz → principal fuente energética</li>
-            <li>🫘 Soja → proteína para desarrollo muscular</li>
-            <li>🌾 Trigo → energía secundaria</li>
-            <li>💊 Aminoácidos → crecimiento y conversión alimenticia</li>
-
-          </ul>
-
-        </div>
-
-      </div>
+      <p class="green mt-4">
+        +1.83%
+      </p>
 
     </div>
 
-    <!-- TOP PAISES -->
+    <div class="card rounded-2xl p-5">
 
-    <div class="glass rounded-2xl p-6 mt-8">
+      <p class="text-gray-400 text-sm">
+        Maíz (CME)
+      </p>
 
-      <h2 class="text-3xl font-bold mb-5">
-        Países que más consumen cerdo
+      <h2 class="text-4xl font-bold mt-3">
+        445
       </h2>
 
-      <div class="overflow-x-auto">
-
-        <table class="w-full">
-
-          <thead>
-
-            <tr class="border-b border-gray-700">
-
-              <th class="text-left py-3">País</th>
-              <th class="text-left py-3">Consumo</th>
-              <th class="text-left py-3">Nivel</th>
-
-            </tr>
-
-          </thead>
-
-          <tbody>
-
-            <tr class="border-b border-gray-800">
-              <td class="py-4">🇨🇳 China</td>
-              <td>52%</td>
-              <td class="green">Extremo</td>
-            </tr>
-
-            <tr class="border-b border-gray-800">
-              <td class="py-4">🇺🇸 Estados Unidos</td>
-              <td>11%</td>
-              <td>Muy Alto</td>
-            </tr>
-
-            <tr class="border-b border-gray-800">
-              <td class="py-4">🇪🇸 España</td>
-              <td>8%</td>
-              <td>Muy Alto</td>
-            </tr>
-
-            <tr class="border-b border-gray-800">
-              <td class="py-4">🇩🇪 Alemania</td>
-              <td>6%</td>
-              <td>Alto</td>
-            </tr>
-
-            <tr class="border-b border-gray-800">
-              <td class="py-4">🇻🇳 Vietnam</td>
-              <td>5%</td>
-              <td>Alto</td>
-            </tr>
-
-          </tbody>
-
-        </table>
-
-      </div>
+      <p class="green mt-4">
+        +1.54%
+      </p>
 
     </div>
 
-    <!-- IA -->
+    <div class="card rounded-2xl p-5">
 
-    <div class="glass rounded-2xl p-6 mt-8">
+      <p class="text-gray-400 text-sm">
+        Soja (CME)
+      </p>
 
-      <h2 class="text-3xl font-bold mb-5">
-        IA Predictiva
+      <h2 class="text-4xl font-bold mt-3">
+        1186
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <p class="red mt-4">
+        -0.69%
+      </p>
 
-        <div class="bg-black/30 rounded-xl p-5">
+    </div>
 
-          <h3 class="text-xl font-bold">
-            Probabilidad Alcista
-          </h3>
+    <div class="card rounded-2xl p-5">
 
-          <p class="text-5xl font-bold green mt-4">
-            72%
-          </p>
+      <p class="text-gray-400 text-sm">
+        Petróleo WTI
+      </p>
 
+      <h2 class="text-4xl font-bold mt-3">
+        78.4
+      </h2>
+
+      <p class="green mt-4">
+        +1.57%
+      </p>
+
+    </div>
+
+    <div class="card rounded-2xl p-5">
+
+      <p class="text-gray-400 text-sm">
+        Dólar Index
+      </p>
+
+      <h2 class="text-4xl font-bold mt-3">
+        104.3
+      </h2>
+
+      <p class="red mt-4">
+        -0.27%
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- CHARTS -->
+
+  <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-8">
+
+    <!-- TABLE -->
+
+    <div class="card rounded-2xl p-6">
+
+      <h2 class="text-2xl font-bold mb-6">
+        Precio del Cerdo en el Mundo
+      </h2>
+
+      <div class="space-y-5">
+
+        <div class="flex justify-between">
+          <span>🇨🇳 China</span>
+          <span class="green">2.85</span>
         </div>
 
-        <div class="bg-black/30 rounded-xl p-5">
-
-          <h3 class="text-xl font-bold">
-            Riesgo Geopolítico
-          </h3>
-
-          <p class="text-5xl font-bold text-yellow-400 mt-4">
-            Medio
-          </p>
-
+        <div class="flex justify-between">
+          <span>🇺🇸 Estados Unidos</span>
+          <span class="green">2.29</span>
         </div>
 
-        <div class="bg-black/30 rounded-xl p-5">
+        <div class="flex justify-between">
+          <span>🇪🇸 España</span>
+          <span class="green">2.31</span>
+        </div>
 
-          <h3 class="text-xl font-bold">
-            Tendencia Feed
-          </h3>
+        <div class="flex justify-between">
+          <span>🇩🇪 Alemania</span>
+          <span class="green">2.25</span>
+        </div>
 
-          <p class="text-5xl font-bold red mt-4">
-            Alcista
-          </p>
+        <div class="flex justify-between">
+          <span>🇧🇷 Brasil</span>
+          <span class="green">2.08</span>
+        </div>
 
+        <div class="flex justify-between">
+          <span>🇲🇽 México</span>
+          <span class="red">2.17</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>🇨🇱 Chile</span>
+          <span class="red">2.34</span>
         </div>
 
       </div>
 
     </div>
 
-    <!-- PROTEINA -->
+    <!-- CHART -->
 
-    <div class="glass rounded-2xl p-6 mt-8 mb-10">
+    <div class="card rounded-2xl p-6 xl:col-span-2">
 
-      <h2 class="text-3xl font-bold mb-5">
-        Proteína Animal y Nutrición
+      <div class="flex justify-between items-center mb-6">
+
+        <h2 class="text-2xl font-bold">
+          Tendencia Global del Precio del Cerdo
+        </h2>
+
+        <h2 class="text-3xl font-bold green">
+          2.23
+        </h2>
+
+      </div>
+
+      <canvas id="lineChart"></canvas>
+
+    </div>
+
+  </div>
+
+  <!-- SECOND GRID -->
+
+  <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-8">
+
+    <!-- FEED -->
+
+    <div class="card rounded-2xl p-6">
+
+      <h2 class="text-2xl font-bold mb-5">
+        Materias Primas
+      </h2>
+
+      <div class="space-y-5">
+
+        <div class="flex justify-between">
+          <span>🌽 Maíz</span>
+          <span class="green">+1.54%</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>🫘 Harina de Soja</span>
+          <span class="red">-0.69%</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>🌾 Trigo</span>
+          <span class="green">+0.88%</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>🛢️ Aceite de Soja</span>
+          <span class="red">-0.21%</span>
+        </div>
+
+      </div>
+
+      <canvas id="feedChart" class="mt-8"></canvas>
+
+    </div>
+
+    <!-- MAP -->
+
+    <div class="card rounded-2xl p-6">
+
+      <h2 class="text-2xl font-bold mb-6">
+        Ranking Consumidores
+      </h2>
+
+      <div class="space-y-5">
+
+        <div class="flex justify-between">
+          <span>🇨🇳 China</span>
+          <span>55M</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>🇺🇸 EE.UU</span>
+          <span>10M</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>🇩🇪 Alemania</span>
+          <span>5.3M</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>🇪🇸 España</span>
+          <span>4.7M</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>🇻🇳 Vietnam</span>
+          <span>3.8M</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- WHY -->
+
+    <div class="card rounded-2xl p-6">
+
+      <h2 class="text-2xl font-bold mb-6">
+        ¿Por qué sube o baja?
+      </h2>
+
+      <div class="space-y-5 text-gray-300 leading-7">
+
+        <p>
+          🌽 El maíz representa el 60% del costo feed.
+        </p>
+
+        <p>
+          🫘 China compra grandes cantidades de soja.
+        </p>
+
+        <p>
+          ⛽ El petróleo aumenta costos logísticos.
+        </p>
+
+        <p>
+          🌎 La inflación reduce el consumo mundial.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- PROTEIN -->
+
+  <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-8">
+
+    <div class="card rounded-2xl p-6">
+
+      <h2 class="text-2xl font-bold mb-6">
+        Proteína Animal
       </h2>
 
       <p class="text-gray-300 leading-8">
 
         La carne de cerdo contiene proteínas completas,
-        aminoácidos esenciales, zinc, hierro hemo y vitaminas B.
-        Estudios nutricionales muestran que las proteínas animales
-        son importantes para el desarrollo muscular,
-        recuperación física y producción hormonal.
+        zinc, hierro hemo y aminoácidos esenciales.
+        Estudios científicos muestran que la proteína animal
+        ayuda al desarrollo muscular y producción hormonal.
 
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-5 mt-8">
+      <div class="grid grid-cols-2 gap-5 mt-8">
 
         <div class="bg-black/30 rounded-xl p-5">
-          <h3 class="font-bold">Proteína</h3>
-          <p class="text-gray-400 mt-2">Construcción muscular</p>
+          Proteína Completa
         </div>
 
         <div class="bg-black/30 rounded-xl p-5">
-          <h3 class="font-bold">Zinc</h3>
-          <p class="text-gray-400 mt-2">Sistema inmune</p>
+          Zinc
         </div>
 
         <div class="bg-black/30 rounded-xl p-5">
-          <h3 class="font-bold">Hierro</h3>
-          <p class="text-gray-400 mt-2">Oxigenación</p>
+          Hierro
         </div>
 
         <div class="bg-black/30 rounded-xl p-5">
-          <h3 class="font-bold">Vitaminas B</h3>
-          <p class="text-gray-400 mt-2">Energía cerebral</p>
+          Vitaminas B
         </div>
 
       </div>
 
     </div>
 
-  </main>
+    <!-- AI -->
 
-  <!-- FOOTER -->
+    <div class="card rounded-2xl p-6">
 
-  <footer class="border-t border-gray-800 p-6 text-center text-gray-500">
+      <h2 class="text-2xl font-bold mb-6">
+        IA Predictiva 333 MACRO
+      </h2>
 
-    333 MACRO © 2026
-    Inteligencia Económica Mundial del Mercado Porcino
+      <div class="flex items-center justify-center">
 
-  </footer>
+        <div class="w-52 h-52 rounded-full border-[18px] border-pink-500 flex items-center justify-center">
 
-  <!-- CHARTS -->
+          <div class="text-center">
 
-  <script>
+            <h2 class="text-6xl font-black">
+              72%
+            </h2>
 
-    // CERDO
+            <p class="pink mt-3">
+              Probabilidad Alcista
+            </p>
 
-    const pigCtx = document.getElementById('pigChart');
+          </div>
 
-    new Chart(pigCtx, {
+        </div>
 
-      type:'line',
+      </div>
 
-      data:{
+      <div class="space-y-4 mt-8">
 
-        labels:[
-          'Lun',
-          'Mar',
-          'Mié',
-          'Jue',
-          'Vie',
-          'Sáb',
-          'Dom'
-        ],
+        <div class="flex justify-between">
+          <span>Maíz</span>
+          <span class="red">+4.2%</span>
+        </div>
 
-        datasets:[{
+        <div class="flex justify-between">
+          <span>Soja</span>
+          <span class="red">+3.1%</span>
+        </div>
 
-          label:'Precio Cerdo',
+        <div class="flex justify-between">
+          <span>Petróleo</span>
+          <span class="red">+2.8%</span>
+        </div>
 
-          data:[
-            2.1,
-            2.15,
-            2.18,
-            2.22,
-            2.31,
-            2.40,
-            2.48
-          ],
+        <div class="flex justify-between">
+          <span>Demanda China</span>
+          <span class="green">Alta</span>
+        </div>
 
-          borderColor:'#00ff88',
+      </div>
 
-          backgroundColor:'rgba(0,255,136,0.1)',
+    </div>
 
-          tension:0.4,
+  </div>
 
-          fill:true
+</div>
 
-        }]
+</div>
 
+<script>
+
+const ctx = document.getElementById('lineChart');
+
+new Chart(ctx, {
+
+  type: 'line',
+
+  data: {
+
+    labels: [
+      '23 Abr',
+      '25 Abr',
+      '27 Abr',
+      '30 Abr',
+      '3 May',
+      '7 May',
+      '14 May',
+      '21 May'
+    ],
+
+    datasets: [{
+
+      label: 'Precio',
+
+      data: [
+        1.8,
+        1.95,
+        1.90,
+        2.02,
+        1.97,
+        2.15,
+        2.21,
+        2.35
+      ],
+
+      borderColor:'#ff0080',
+
+      backgroundColor:'rgba(255,0,128,0.1)',
+
+      tension:0.4,
+
+      fill:true
+
+    }]
+
+  },
+
+  options: {
+
+    responsive:true,
+
+    plugins:{
+      legend:{
+        labels:{
+          color:'white'
+        }
+      }
+    },
+
+    scales:{
+
+      x:{
+        ticks:{
+          color:'white'
+        }
       },
 
-      options:{
-
-        responsive:true,
-
-        plugins:{
-          legend:{
-            labels:{
-              color:'white'
-            }
-          }
-        },
-
-        scales:{
-
-          x:{
-            ticks:{
-              color:'white'
-            }
-          },
-
-          y:{
-            ticks:{
-              color:'white'
-            }
-          }
-
+      y:{
+        ticks:{
+          color:'white'
         }
-
       }
 
-    });
+    }
 
-    // FEED
+  }
 
-    const feedCtx = document.getElementById('feedChart');
+});
 
-    new Chart(feedCtx, {
+const feedCtx = document.getElementById('feedChart');
 
-      type:'bar',
+new Chart(feedCtx, {
 
-      data:{
+  type:'doughnut',
 
-        labels:[
-          'Maíz',
-          'Soja',
-          'Trigo',
-          'Aceites'
-        ],
+  data:{
 
-        datasets:[{
+    labels:[
+      'Maíz',
+      'Soja',
+      'Trigo',
+      'Otros'
+    ],
 
-          label:'Costo Feed',
+    datasets:[{
 
-          data:[
-            65,
-            22,
-            8,
-            5
-          ],
+      data:[
+        65,
+        22,
+        8,
+        5
+      ],
 
-          backgroundColor:[
-            '#00ff88',
-            '#00b4ff',
-            '#ffd166',
-            '#ff4d6d'
-          ]
+      backgroundColor:[
+        '#ff0080',
+        '#7928ca',
+        '#00ff88',
+        '#00b4ff'
+      ]
 
-        }]
+    }]
 
-      },
+  },
 
-      options:{
+  options:{
 
-        responsive:true,
-
-        plugins:{
-          legend:{
-            labels:{
-              color:'white'
-            }
-          }
-        },
-
-        scales:{
-
-          x:{
-            ticks:{
-              color:'white'
-            }
-          },
-
-          y:{
-            ticks:{
-              color:'white'
-            }
-          }
-
+    plugins:{
+      legend:{
+        labels:{
+          color:'white'
         }
-
       }
+    }
 
-    });
+  }
 
-  </script>
+});
+
+</script>
 
 </body>
 </html>
+
