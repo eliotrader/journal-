@@ -1,296 +1,578 @@
-<!-- ========================= -->
-<!-- LIVE MACRO NEWS FEED -->
-<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>333 MACRO - Inteligencia Global del Cerdo</title>
 
-<div class="glass panel">
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <h2 class="text-2xl font-bold gold mb-5">
-    Noticias Macro en Vivo
-  </h2>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <div class="space-y-5">
+  <style>
+    body{
+      background:#050816;
+      color:white;
+      font-family:Arial, Helvetica, sans-serif;
+    }
 
-    <div class="border-b border-gray-800 pb-4">
+    .glass{
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,0.08);
+    }
 
-      <div class="flex justify-between">
+    .green{
+      color:#00ff88;
+    }
 
-        <h3 class="green font-bold">
-          Reuters
-        </h3>
+    .red{
+      color:#ff4d6d;
+    }
 
-        <span class="text-gray-500 text-sm">
-          EN VIVO
-        </span>
+    .card-hover:hover{
+      transform:translateY(-5px);
+      transition:0.3s;
+    }
 
-      </div>
+    .gradient{
+      background:linear-gradient(90deg,#00ff88,#00b4ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
 
-      <p class="text-gray-400 mt-2 text-sm leading-6">
+    .news-scroll{
+      animation:scroll 25s linear infinite;
+    }
 
-        Los rendimientos de los bonos caen mientras los mercados aumentan
-        expectativas de futuros recortes de tasas por parte de la FED.
+    @keyframes scroll{
+      0%{transform:translateX(100%)}
+      100%{transform:translateX(-100%)}
+    }
+  </style>
+</head>
 
-      </p>
+<body>
 
-    </div>
+  <!-- HEADER -->
 
-    <div class="border-b border-gray-800 pb-4">
-
-      <div class="flex justify-between">
-
-        <h3 class="yellow font-bold">
-          Bloomberg
-        </h3>
-
-        <span class="text-gray-500 text-sm">
-          EN VIVO
-        </span>
-
-      </div>
-
-      <p class="text-gray-400 mt-2 text-sm leading-6">
-
-        El oro se mantiene fuerte gracias a la incertidumbre geopolítica
-        y el posicionamiento defensivo institucional.
-
-      </p>
-
-    </div>
+  <header class="p-6 border-b border-gray-800 flex justify-between items-center">
 
     <div>
+      <h1 class="text-4xl font-bold gradient">
+        333 MACRO
+      </h1>
 
-      <div class="flex justify-between">
+      <p class="text-gray-400 mt-2">
+        Inteligencia Global del Mercado Porcino
+      </p>
+    </div>
 
-        <h3 class="red font-bold">
-          FinancialJuice
-        </h3>
+    <div class="text-right">
+      <p class="text-sm text-gray-400">Estado del mercado</p>
+      <p class="green font-bold text-xl">ALCISTA</p>
+    </div>
 
-        <span class="text-gray-500 text-sm">
-          EN VIVO
-        </span>
+  </header>
+
+  <!-- NOTICIAS -->
+
+  <div class="overflow-hidden border-b border-gray-800 py-3">
+    <div class="news-scroll whitespace-nowrap text-sm text-gray-300">
+
+      ⚠️ China incrementa importaciones de soja |
+      📈 El maíz sube 3.2% |
+      🐖 El precio del cerdo en Europa alcanza máximos |
+      ⛽ Petróleo sube y aumenta costos logísticos |
+      🌎 Brasil aumenta exportaciones porcinas
+
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+
+  <main class="p-6">
+
+    <!-- GRID -->
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <!-- CARD -->
+
+      <div class="glass rounded-2xl p-5 card-hover">
+
+        <h2 class="text-gray-400 text-sm">
+          Precio Global Cerdo
+        </h2>
+
+        <p class="text-3xl font-bold mt-2">
+          $2.48/kg
+        </p>
+
+        <p class="green mt-3">
+          +4.2%
+        </p>
 
       </div>
 
-      <p class="text-gray-400 mt-2 text-sm leading-6">
+      <div class="glass rounded-2xl p-5 card-hover">
 
-        El mercado incrementa probabilidades de flexibilización monetaria futura.
+        <h2 class="text-gray-400 text-sm">
+          Maíz
+        </h2>
+
+        <p class="text-3xl font-bold mt-2">
+          $5.62
+        </p>
+
+        <p class="red mt-3">
+          +1.9%
+        </p>
+
+      </div>
+
+      <div class="glass rounded-2xl p-5 card-hover">
+
+        <h2 class="text-gray-400 text-sm">
+          Harina de Soja
+        </h2>
+
+        <p class="text-3xl font-bold mt-2">
+          $412
+        </p>
+
+        <p class="green mt-3">
+          +2.6%
+        </p>
+
+      </div>
+
+      <div class="glass rounded-2xl p-5 card-hover">
+
+        <h2 class="text-gray-400 text-sm">
+          Petróleo
+        </h2>
+
+        <p class="text-3xl font-bold mt-2">
+          $84
+        </p>
+
+        <p class="red mt-3">
+          +1.2%
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- GRAFICOS -->
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+
+      <div class="glass rounded-2xl p-6">
+
+        <h2 class="text-2xl font-bold mb-5">
+          Precio del Cerdo
+        </h2>
+
+        <canvas id="pigChart"></canvas>
+
+      </div>
+
+      <div class="glass rounded-2xl p-6">
+
+        <h2 class="text-2xl font-bold mb-5">
+          Costos de Alimentación
+        </h2>
+
+        <canvas id="feedChart"></canvas>
+
+      </div>
+
+    </div>
+
+    <!-- EXPLICACION ECONOMICA -->
+
+    <div class="glass rounded-2xl p-6 mt-8">
+
+      <h2 class="text-3xl font-bold mb-5">
+        Explicación Macroeconómica
+      </h2>
+
+      <div class="space-y-6">
+
+        <div>
+
+          <h3 class="text-xl font-bold green">
+            ¿Por qué sube el precio del cerdo?
+          </h3>
+
+          <p class="text-gray-300 mt-2 leading-8">
+            El precio del cerdo aumenta cuando suben los costos de alimentación,
+            especialmente el maíz y la harina de soja.
+            China consume enormes cantidades de proteína animal y cualquier
+            incremento en la demanda impacta el mercado global.
+          </p>
+
+        </div>
+
+        <div>
+
+          <h3 class="text-xl font-bold green">
+            Impacto del petróleo
+          </h3>
+
+          <p class="text-gray-300 mt-2 leading-8">
+            El petróleo afecta el transporte marítimo, fertilizantes y logística agrícola.
+            Cuando el petróleo sube, aumenta el costo de producir y distribuir alimento porcino.
+          </p>
+
+        </div>
+
+        <div>
+
+          <h3 class="text-xl font-bold green">
+            Materias primas más importantes
+          </h3>
+
+          <ul class="mt-3 text-gray-300 space-y-2">
+
+            <li>🌽 Maíz → principal fuente energética</li>
+            <li>🫘 Soja → proteína para desarrollo muscular</li>
+            <li>🌾 Trigo → energía secundaria</li>
+            <li>💊 Aminoácidos → crecimiento y conversión alimenticia</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TOP PAISES -->
+
+    <div class="glass rounded-2xl p-6 mt-8">
+
+      <h2 class="text-3xl font-bold mb-5">
+        Países que más consumen cerdo
+      </h2>
+
+      <div class="overflow-x-auto">
+
+        <table class="w-full">
+
+          <thead>
+
+            <tr class="border-b border-gray-700">
+
+              <th class="text-left py-3">País</th>
+              <th class="text-left py-3">Consumo</th>
+              <th class="text-left py-3">Nivel</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr class="border-b border-gray-800">
+              <td class="py-4">🇨🇳 China</td>
+              <td>52%</td>
+              <td class="green">Extremo</td>
+            </tr>
+
+            <tr class="border-b border-gray-800">
+              <td class="py-4">🇺🇸 Estados Unidos</td>
+              <td>11%</td>
+              <td>Muy Alto</td>
+            </tr>
+
+            <tr class="border-b border-gray-800">
+              <td class="py-4">🇪🇸 España</td>
+              <td>8%</td>
+              <td>Muy Alto</td>
+            </tr>
+
+            <tr class="border-b border-gray-800">
+              <td class="py-4">🇩🇪 Alemania</td>
+              <td>6%</td>
+              <td>Alto</td>
+            </tr>
+
+            <tr class="border-b border-gray-800">
+              <td class="py-4">🇻🇳 Vietnam</td>
+              <td>5%</td>
+              <td>Alto</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+    <!-- IA -->
+
+    <div class="glass rounded-2xl p-6 mt-8">
+
+      <h2 class="text-3xl font-bold mb-5">
+        IA Predictiva
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <div class="bg-black/30 rounded-xl p-5">
+
+          <h3 class="text-xl font-bold">
+            Probabilidad Alcista
+          </h3>
+
+          <p class="text-5xl font-bold green mt-4">
+            72%
+          </p>
+
+        </div>
+
+        <div class="bg-black/30 rounded-xl p-5">
+
+          <h3 class="text-xl font-bold">
+            Riesgo Geopolítico
+          </h3>
+
+          <p class="text-5xl font-bold text-yellow-400 mt-4">
+            Medio
+          </p>
+
+        </div>
+
+        <div class="bg-black/30 rounded-xl p-5">
+
+          <h3 class="text-xl font-bold">
+            Tendencia Feed
+          </h3>
+
+          <p class="text-5xl font-bold red mt-4">
+            Alcista
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PROTEINA -->
+
+    <div class="glass rounded-2xl p-6 mt-8 mb-10">
+
+      <h2 class="text-3xl font-bold mb-5">
+        Proteína Animal y Nutrición
+      </h2>
+
+      <p class="text-gray-300 leading-8">
+
+        La carne de cerdo contiene proteínas completas,
+        aminoácidos esenciales, zinc, hierro hemo y vitaminas B.
+        Estudios nutricionales muestran que las proteínas animales
+        son importantes para el desarrollo muscular,
+        recuperación física y producción hormonal.
 
       </p>
 
-    </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-5 mt-8">
 
-  </div>
+        <div class="bg-black/30 rounded-xl p-5">
+          <h3 class="font-bold">Proteína</h3>
+          <p class="text-gray-400 mt-2">Construcción muscular</p>
+        </div>
 
-</div>
+        <div class="bg-black/30 rounded-xl p-5">
+          <h3 class="font-bold">Zinc</h3>
+          <p class="text-gray-400 mt-2">Sistema inmune</p>
+        </div>
 
-<!-- ========================= -->
-<!-- MOTOR DXY -->
-<!-- ========================= -->
+        <div class="bg-black/30 rounded-xl p-5">
+          <h3 class="font-bold">Hierro</h3>
+          <p class="text-gray-400 mt-2">Oxigenación</p>
+        </div>
 
-<div class="glass panel">
-
-  <h2 class="text-2xl font-bold gold mb-5">
-    Motor de Dominancia DXY
-  </h2>
-
-  <div class="space-y-5">
-
-    <div class="flex justify-between">
-
-      <span>Tendencia Dólar</span>
-
-      <span class="red">
-        Bajista
-      </span>
-
-    </div>
-
-    <div class="flex justify-between">
-
-      <span>Liquidez USD</span>
-
-      <span class="green">
-        Expansiva
-      </span>
-
-    </div>
-
-    <div class="flex justify-between">
-
-      <span>Presión FED</span>
-
-      <span class="yellow">
-        Neutral
-      </span>
-
-    </div>
-
-    <div class="flex justify-between">
-
-      <span>Correlación Oro</span>
-
-      <span class="green">
-        Positiva
-      </span>
-
-    </div>
-
-  </div>
-
-</div>
-
-<!-- ========================= -->
-<!-- MOTOR DE BONOS -->
-<!-- ========================= -->
-
-<div class="glass panel">
-
-  <h2 class="text-2xl font-bold gold mb-5">
-    Motor Mercado de Bonos
-  </h2>
-
-  <div class="space-y-5">
-
-    <div class="flex justify-between">
-
-      <span>Bono US10Y</span>
-
-      <span class="red">
-        4.21%
-      </span>
-
-    </div>
-
-    <div class="flex justify-between">
-
-      <span>Bono 2Y</span>
-
-      <span class="yellow">
-        4.88%
-      </span>
-
-    </div>
-
-    <div class="flex justify-between">
-
-      <span>Curva Rendimientos</span>
-
-      <span class="green">
-        Invertida
-      </span>
-
-    </div>
-
-    <div class="flex justify-between">
-
-      <span>Impacto Oro</span>
-
-      <span class="red">
-        Presión Bajista
-      </span>
-
-    </div>
-
-  </div>
-
-</div>
-
-<!-- ========================= -->
-<!-- MOTOR DE PROBABILIDAD -->
-<!-- ========================= -->
-
-<div class="glass panel glow">
-
-  <h2 class="text-2xl font-bold gold mb-5">
-    Motor de Probabilidad Oro
-  </h2>
-
-  <div class="space-y-6">
-
-    <div>
-
-      <div class="flex justify-between mb-2">
-
-        <span>Probabilidad Alcista</span>
-
-        <span class="green">
-          74%
-        </span>
+        <div class="bg-black/30 rounded-xl p-5">
+          <h3 class="font-bold">Vitaminas B</h3>
+          <p class="text-gray-400 mt-2">Energía cerebral</p>
+        </div>
 
       </div>
 
-      <div class="heatbar">
-        <div class="heatfill bg-green-400 w-3/4"></div>
-      </div>
-
     </div>
 
-    <div>
+  </main>
 
-      <div class="flex justify-between mb-2">
+  <!-- FOOTER -->
 
-        <span>Probabilidad Bajista</span>
+  <footer class="border-t border-gray-800 p-6 text-center text-gray-500">
 
-        <span class="red">
-          26%
-        </span>
+    333 MACRO © 2026
+    Inteligencia Económica Mundial del Mercado Porcino
 
-      </div>
+  </footer>
 
-      <div class="heatbar">
-        <div class="heatfill bg-red-400 w-1/4"></div>
-      </div>
+  <!-- CHARTS -->
 
-    </div>
+  <script>
 
-    <div class="pt-4 border-t border-gray-800">
+    // CERDO
 
-      <p class="text-gray-400 text-sm leading-6">
+    const pigCtx = document.getElementById('pigChart');
 
-        El modelo de IA favorece continuidad alcista debido al debilitamiento
-        del dólar, incertidumbre geopolítica y expectativas de recortes de tasas.
+    new Chart(pigCtx, {
 
-      </p>
+      type:'line',
 
-    </div>
+      data:{
 
-  </div>
+        labels:[
+          'Lun',
+          'Mar',
+          'Mié',
+          'Jue',
+          'Vie',
+          'Sáb',
+          'Dom'
+        ],
 
-</div>
+        datasets:[{
 
-<!-- ========================= -->
-<!-- FOREX FACTORY -->
-<!-- ========================= -->
+          label:'Precio Cerdo',
 
-<div class="glass panel">
+          data:[
+            2.1,
+            2.15,
+            2.18,
+            2.22,
+            2.31,
+            2.40,
+            2.48
+          ],
 
-  <h2 class="text-2xl font-bold gold mb-5">
-    Calendario Forex Factory
-  </h2>
+          borderColor:'#00ff88',
 
-  <iframe
-    src="https://www.forexfactory.com/calendar"
-    width="100%"
-    height="500"
-    style="border:none; border-radius:18px;"
-  ></iframe>
+          backgroundColor:'rgba(0,255,136,0.1)',
 
-</div>
+          tension:0.4,
 
-<!-- ========================= -->
-<!-- INVESTING CALENDAR -->
-<!-- ========================= -->
+          fill:true
 
-<div class="glass panel">
+        }]
 
-  <h2 class="text-2xl font-bold gold mb-5">
-    Calendario Investing.com
-  </h2>
+      },
 
-  <iframe
-    src="https://www.investing.com/economic-calendar/"
-    width="100%"
-    height="500"
-    style="border:none; border-radius:18px;"
-  ></iframe>
+      options:{
 
-</div>
+        responsive:true,
+
+        plugins:{
+          legend:{
+            labels:{
+              color:'white'
+            }
+          }
+        },
+
+        scales:{
+
+          x:{
+            ticks:{
+              color:'white'
+            }
+          },
+
+          y:{
+            ticks:{
+              color:'white'
+            }
+          }
+
+        }
+
+      }
+
+    });
+
+    // FEED
+
+    const feedCtx = document.getElementById('feedChart');
+
+    new Chart(feedCtx, {
+
+      type:'bar',
+
+      data:{
+
+        labels:[
+          'Maíz',
+          'Soja',
+          'Trigo',
+          'Aceites'
+        ],
+
+        datasets:[{
+
+          label:'Costo Feed',
+
+          data:[
+            65,
+            22,
+            8,
+            5
+          ],
+
+          backgroundColor:[
+            '#00ff88',
+            '#00b4ff',
+            '#ffd166',
+            '#ff4d6d'
+          ]
+
+        }]
+
+      },
+
+      options:{
+
+        responsive:true,
+
+        plugins:{
+          legend:{
+            labels:{
+              color:'white'
+            }
+          }
+        },
+
+        scales:{
+
+          x:{
+            ticks:{
+              color:'white'
+            }
+          },
+
+          y:{
+            ticks:{
+              color:'white'
+            }
+          }
+
+        }
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
