@@ -1,3 +1,142 @@
+{
+  "name": "gold-ai-terminal",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.18.2"
+  }
+}
+OPENAI_API_KEY=TU_API_KEY_AQUI
+require("dotenv").config();
+
+const express = require("express");
+const axios = require("axios");
+const cors = require("cors");
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+// =========================
+// ENDPOINT PRINCIPAL IA
+// =========================
+
+app.get("/gold-ai", async (req,res)=>{
+
+  try {
+
+    // =========================
+    // 📊 DATOS MACRO (SIMULADOS BASE)
+    // luego los conectas a APIs reales
+    // =========================
+
+    const dxy = "101.35 - tendencia bajista moderada";
+    const bond = "US10Y 4.19% presión negativa para oro";
+    const cpi = "Inflación estable con ligera desaceleración";
+    const sentiment = "Risk-Off institucional";
+
+    // =========================
+    // 🧠 IA OPENAI
+    // =========================
+
+    const ai = await axios.post(
+
+      "https://api.openai.com/v1/chat/completions",
+
+      {
+
+        model: "gpt-4.1-mini",
+
+        messages: [
+
+          {
+            role: "system",
+            content: `
+Eres un analista macroeconómico institucional de nivel Goldman Sachs.
+Analizas oro (XAUUSD) usando:
+
+- DXY
+- bonos US10Y
+- inflación
+- sentimiento de mercado
+
+Devuelve:
+1. narrativa institucional
+2. sesgo del oro (alcista/bajista)
+3. riesgo principal
+            `
+          },
+
+          {
+            role: "user",
+            content: `
+DXY: ${dxy}
+BONOS: ${bond}
+CPI: ${cpi}
+SENTIMIENTO: ${sentiment}
+
+Genera análisis institucional del oro.
+            `
+          }
+
+        ]
+
+      },
+
+      {
+
+        headers: {
+          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+        }
+
+      }
+
+    );
+
+    const analysis =
+      ai.data.choices[0].message.content;
+
+    // =========================
+    // RESPONSE FINAL
+    // =========================
+
+    res.json({
+
+      dxy,
+      bond,
+      cpi,
+      sentiment,
+      analysis
+
+    });
+
+  } catch(err){
+
+    res.json({
+
+      analysis: "Error en IA",
+      error: err.message
+
+    });
+
+  }
+
+});
+
+// =========================
+
+app.listen(3000, ()=>{
+
+  console.log("🔥 EliotFWCapital AI Terminal activo en puerto 3000");
+
+});
 <!DOCTYPE html>
 <html lang="es">
 
